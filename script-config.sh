@@ -207,8 +207,12 @@ BEFORE_HOOK_CMD=""
 # last command.
 # This option does not have any effect if CUSTOM_HOOK is set to 0
 # Use NAME for a friendly name, CMD for the command itself.
+# Set EXECUTE_BEFORE_SPINDOWN to "true", if you have hd-idle configured
+# to spin down your disks in the end and want the custom hook to be 
+# executed before that. Default is after spindown.
 AFTER_HOOK_NAME=""
 AFTER_HOOK_CMD=""
+EXECUTE_BEFORE_SPINDOWN=""
 
 ####################### USER CONFIGURATION END #######################
 
