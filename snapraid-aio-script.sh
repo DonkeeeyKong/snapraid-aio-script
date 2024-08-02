@@ -320,8 +320,8 @@ if [ "$SNAP_STATUS" -eq 1 ]; then
 fi
 
 # Custom Hook - After (if executed before drive spin down)
-if [ "$CUSTOM_HOOK" -eq 1 -a "$EXECUTE_BEFORE_SPINDOWN" -eq 1 ]; then
- 	echo "### Custom Hook - [$AFTER_HOOK_NAME]";
+if [ "$CUSTOM_HOOK" -eq 1 ] && [ "$EXECUTE_BEFORE_SPINDOWN" -eq 1 ]; then
+	echo "### Custom Hook - [$AFTER_HOOK_NAME]";
 	bash -c "$AFTER_HOOK_CMD"
 fi
 
@@ -346,7 +346,7 @@ fi
   fi
 
   # Custom Hook - After
-  if [ "$CUSTOM_HOOK" -eq 1 -a "$EXECUTE_BEFORE_SPINDOWN" -ne 1 ]; then
+  if [ "$CUSTOM_HOOK" -eq 1 ] && [ "$EXECUTE_BEFORE_SPINDOWN" -ne 1 ]; then
     echo "### Custom Hook - [$AFTER_HOOK_NAME]";
     bash -c "$AFTER_HOOK_CMD"
   fi
